@@ -1,6 +1,7 @@
 import React from "react"
 import * as actions from "../actions/contadorActions"
 import { useSelector, useDispatch } from "react-redux"
+import { css } from "@emotion/core"
 
 const CountRedux = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,14 @@ const CountRedux = () => {
         >
           -
         </button>
-        <span className="px-8 border-t border-b py-2">{cuenta}</span>
+        <span
+          className="px-8 border-t border-b py-2"
+          css={css`
+            color: red;
+          `}
+        >
+          {cuenta}
+        </span>
         <button
           className="bg-gray-800 text-white text-sm px-4 py-2 border rounded-br rounded-tr"
           onClick={() => dispatch(actions.aumentar(cuenta))}
