@@ -1,8 +1,9 @@
 import React from "react"
 import * as actions from "../actions/contadorActions"
 import { useSelector, useDispatch } from "react-redux"
-import { css } from "@emotion/core"
 import tw from "tailwind.macro"
+import { useQuery } from "@apollo/react-hooks"
+import gql from "graphql-tag"
 
 const Button = tw.button`
   bg-gray-800
@@ -14,6 +15,21 @@ const Button = tw.button`
 `
 
 const CountRedux = () => {
+  const OBTENER_MENSAJES_Q = gql`
+    {
+      obtenerAvisos {
+        id
+        mensaje
+      }
+    }
+  `
+
+  const { loading, error, data } = useQuery(OBTENER_MENSAJES_Q)
+  if (loading) console.log(loading)
+  if (error) console.log(error)
+
+  console.log(data)
+
   const dispatch = useDispatch()
   const cuenta = useSelector(state => state.contador.contador)
 
