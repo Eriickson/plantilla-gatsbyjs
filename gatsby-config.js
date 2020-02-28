@@ -27,7 +27,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        // Accepts all options defined by `gatsby-plugin-postcss` plugin.
+      },
+    },
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
@@ -41,7 +46,12 @@ module.exports = {
         windowKey: "__PRELOADED_STATE__",
       },
     },
-    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
