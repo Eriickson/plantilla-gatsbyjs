@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import CountRedux from "../components/CountRedux"
+import withLocation from "../tools/withLocation"
 
-const index = () => {
+const Index = ({ search }) => {
+  const [parmsUrl] = useState(search)
+
   return (
     <div>
       <input
@@ -10,7 +13,7 @@ const index = () => {
         name=""
         id=""
       />
-      <select class="form-select block w-1/3 m-auto mt-1">
+      <select className="form-select block w-1/3 m-auto mt-1">
         <option>Option 1</option>
         <option>Option 2</option>
       </select>
@@ -19,4 +22,4 @@ const index = () => {
   )
 }
 
-export default index
+export default withLocation(Index)
