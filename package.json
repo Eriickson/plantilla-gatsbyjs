@@ -44,7 +44,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-system": "^5.1.5",
-    "stylelint": "^13.2.0",
+    "stylelint": "^15.10.1",
     "tailwind.macro": "^1.0.0-alpha.10"
   },
   "devDependencies": {
